@@ -1,6 +1,10 @@
 { agenix, config, pkgs, ... }:
 
+<<<<<<< HEAD
 let user = "%USER%"; in
+=======
+let user = "tuna"; in
+>>>>>>> 83fa02a (Set up mac initially)
 
 {
 

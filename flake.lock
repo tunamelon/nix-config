@@ -332,7 +332,28 @@
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "nix-homebrew": "nix-homebrew",
+<<<<<<< HEAD
         "nixpkgs": "nixpkgs_5"
+=======
+        "nixpkgs": "nixpkgs_5",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703973990,
+        "narHash": "sha256-DTH1CNh4EHzF15TRNtXLorPjlgfBZ63gUa+gU02rY6M=",
+        "ref": "refs/heads/main",
+        "rev": "8456cb3c91c83e0c64f8a612bbb79b558b0cd7b3",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/tunamelon/nix-shush.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/tunamelon/nix-shush.git"
+>>>>>>> 83fa02a (Set up mac initially)
       }
     },
     "systems": {

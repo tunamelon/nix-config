@@ -27,10 +27,21 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+<<<<<<< HEAD
   };
   outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix } @inputs:
     let
       user = "%USER%";
+=======
+    secrets = {
+      url = "git+ssh://git@github.com/tunamelon/nix-shush.git";
+      flake = false;
+    };
+  };
+  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+    let
+      user = "tuna";
+>>>>>>> 83fa02a (Set up mac initially)
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
       darwinSystems = [ "aarch64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
@@ -73,7 +84,11 @@
       devShells = forAllSystems devShell;
       apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
+<<<<<<< HEAD
       darwinConfigurations = let user = "%USER%"; in {
+=======
+      darwinConfigurations = let user = "tuna"; in {
+>>>>>>> 83fa02a (Set up mac initially)
         macos = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = inputs;

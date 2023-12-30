@@ -1,6 +1,10 @@
 { config, inputs, pkgs, agenix, ... }:
 
+<<<<<<< HEAD
 let user = "%USER%";
+=======
+let user = "tuna";
+>>>>>>> 83fa02a (Set up mac initially)
     keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p" ]; in
 {
   imports = [

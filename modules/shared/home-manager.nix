@@ -1,8 +1,14 @@
 { config, pkgs, lib, ... }:
 
+<<<<<<< HEAD
 let name = "%NAME%";
     user = "%USER%";
     email = "%EMAIL%"; in
+=======
+let name = "Tuna";
+    user = "tuna";
+    email = "tuna@sodamelon.com"; in
+>>>>>>> 83fa02a (Set up mac initially)
 {
   # Shared shell configuration
   zsh = {
@@ -78,7 +84,11 @@ let name = "%NAME%";
 	    editor = "vim";
         autocrlf = "input";
       };
+<<<<<<< HEAD
       commit.gpgsign = true;
+=======
+      commit.gpgsign = false;
+>>>>>>> 83fa02a (Set up mac initially)
       pull.rebase = true;
       rebase.autoStash = true;
     };

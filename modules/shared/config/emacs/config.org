@@ -17,8 +17,8 @@ Just me!
 #+NAME: personal-info
 #+BEGIN_SRC emacs-lisp
 <<<<<<< HEAD
-  (setq user-full-name "%NAME%"
-    user-mail-address "%EMAIL%")
+  (setq user-full-name "Tuna"
+    user-mail-address "tuna@sodamelon.com")
 =======
   (setq user-full-name "Tuna"
     user-mail-address "tuna@sodamelon.com")
@@ -90,8 +90,8 @@ This associates our package manager with the right source (MELPA).
   ;; Set path for darwin
   (when (system-is-mac)
 <<<<<<< HEAD
-    (setenv "PATH" (concat (getenv "PATH") ":/Users/%USER%/.nix-profile/bin:/usr/bin"))
-    (setq exec-path (append '("/Users/%USER%/bin" "/profile/bin" "/Users/%USER%/.npm-packages/bin" "/Users/%USER%/.nix-profile/bin" "/nix/var/nix/profiles/default/bin" "/usr/local/bin" "/usr/bin") exec-path)))
+    (setenv "PATH" (concat (getenv "PATH") ":/Users/tuna/.nix-profile/bin:/usr/bin"))
+    (setq exec-path (append '("/Users/tuna/bin" "/profile/bin" "/Users/tuna/.npm-packages/bin" "/Users/tuna/.nix-profile/bin" "/nix/var/nix/profiles/default/bin" "/usr/local/bin" "/usr/bin") exec-path)))
 =======
     (setenv "PATH" (concat (getenv "PATH") ":/Users/tuna/.nix-profile/bin:/usr/bin"))
     (setq exec-path (append '("/Users/tuna/bin" "/profile/bin" "/Users/tuna/.npm-packages/bin" "/Users/tuna/.nix-profile/bin" "/nix/var/nix/profiles/default/bin" "/usr/local/bin" "/usr/bin") exec-path)))

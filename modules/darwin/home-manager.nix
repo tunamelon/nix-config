@@ -1,11 +1,7 @@
 { config, pkgs, lib, home-manager, ... }:
 
 let
-<<<<<<< HEAD
-  user = "%USER%";
-=======
   user = "tuna";
->>>>>>> 83fa02a (Set up mac initially)
   # Define the content of your file as a derivation
   myEmacsLauncher = pkgs.writeScript "emacs-launcher.command" ''
     #!/bin/sh
@@ -39,13 +35,8 @@ in
     # $ mas search <app name>
     #
     masApps = {
-<<<<<<< HEAD
-      "1password" = 1333542190;
-      "wireguard" = 1451685025;
-=======
       "Bitwarden" = 1352778147;
 #      "wireguard" = 1451685025;
->>>>>>> 83fa02a (Set up mac initially)
     };
   };
 
@@ -77,29 +68,16 @@ in
     dock = {
       enable = true;
       entries = [
-<<<<<<< HEAD
-        { path = "/Applications/Slack.app/"; }
-        { path = "/System/Applications/Messages.app/"; }
-        { path = "/System/Applications/Facetime.app/"; }
-        { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-        { path = "/System/Applications/Music.app/"; }
-        { path = "/System/Applications/News.app/"; }
-        { path = "/System/Applications/Photos.app/"; }
-        { path = "/System/Applications/Photo Booth.app/"; }
-        { path = "/System/Applications/TV.app/"; }
-        { path = "/System/Applications/Home.app/"; }
-=======
         #{ path = "/Applications/Slack.app/"; }
         { path = "/System/Applications/Messages.app/"; }
         { path = "/System/Applications/Facetime.app/"; }
         { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-        #{ path = "/System/Applications/Music.app/"; }
+        { path = "/Applications/Firefox.app/"; }
         #{ path = "/System/Applications/News.app/"; }
         #{ path = "/System/Applications/Photos.app/"; }
         #{ path = "/System/Applications/Photo Booth.app/"; }
         { path = "/System/Applications/TV.app/"; }
         #{ path = "/System/Applications/Home.app/"; }
->>>>>>> 83fa02a (Set up mac initially)
         {
           path = toString myEmacsLauncher;
           section = "others";

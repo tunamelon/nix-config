@@ -1,7 +1,7 @@
 { config, inputs, pkgs, agenix, ... }:
 
 <<<<<<< HEAD
-let user = "%USER%";
+let user = "tuna";
 =======
 let user = "tuna";
 >>>>>>> 83fa02a (Set up mac initially)

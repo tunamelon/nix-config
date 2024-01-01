@@ -77,6 +77,7 @@
       };
       system = "aarch64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+#      nixpkgs.config.allowUnfree = true;
     in
     {
       devShells = forAllSystems devShell;
@@ -129,14 +130,14 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${user} = import ./modules/tunapi-0/home-manager.nix;
-            };
-          }
-          ./hosts/tunapi-0/
+#          home-manager.nixosModules.home-manager {
+#            home-manager = {
+#              useGlobalPkgs = true;
+#              useUserPackages = true;
+#              users.${user} = import ./modules/tunapi-0/home-manager.nix;
+#            };
+#          }
+          ./hosts/tunapi-0
         ];
       };
 

@@ -1,10 +1,6 @@
 { config, pkgs, agenix, secrets, ... }:
 
-<<<<<<< HEAD
 let user = "tuna"; in
-=======
-let user = "tuna"; in
->>>>>>> 83fa02a (Set up mac initially)
 {
   age.identityPaths = [
     "/home/${user}/.ssh/id_ed25519"

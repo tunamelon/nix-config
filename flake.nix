@@ -75,6 +75,7 @@
         "create-keys" = mkApp "create-keys" system;
         "check-keys" = mkApp "check-keys" system;
       };
+      system = "aarch64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
@@ -122,8 +123,8 @@
         ];
       });
 
-      homeConfigurations."tuna" = home-manager.lib.homeManagerConfiguration {
-        inherit nixpkgs.legacyPackages.${system};
+      homeConfigurations."tunapi-0" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.

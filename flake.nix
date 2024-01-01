@@ -116,6 +116,23 @@
           }
           ./hosts/nixos
         ];
-     });
+      });
+
+      piConfigurations {
+        "tuna@tunapi-0" = home-manager.lib.homeManagerConfiguration {
+          system = "aarch64-linux";
+          specialArgs = inputs;
+          modules = [
+            home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${user} = import ./modules/pi/home-manager.nix;
+            };
+            ./hosts/pi
+          ];
+        };
+      };
+    
   };
 }

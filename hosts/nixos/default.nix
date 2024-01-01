@@ -1,10 +1,5 @@
 { config, inputs, pkgs, agenix, ... }:
-
-<<<<<<< HEAD
 let user = "tuna";
-=======
-let user = "tuna";
->>>>>>> 83fa02a (Set up mac initially)
     keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOk8iAnIaa1deoc7jw8YACPNVka1ZFJxhnU4G74TmS+p" ]; in
 {
   imports = [
@@ -30,7 +25,7 @@ let user = "tuna";
   };
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "Europe/London";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config

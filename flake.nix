@@ -129,9 +129,28 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./hosts/tunapi-0/home.nix
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${user} = import ./modules/tunapi-0/home-manager.nix;
+            };
+          }
+          ./hosts/tunapi-0/
         ];
       };
+
+### This worked ### Just remember to copy home.nix back from /home-manager
+#      homeConfigurations."tuna" = home-manager.lib.homeManagerConfiguration {
+#        inherit nixpkgs.legacyPackages.${system};
+#        extraSpecialArgs = {inherit inputs;};
+#        # Specify your home configuration modules here, for example,
+#        # the path to your home.nix.
+#        modules = [
+#          ./hosts/tunapi-0/home.nix
+#        ];
+#      };
+###################
 
   };
 }

@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 VERSION=1.0
 
@@ -24,7 +24,16 @@ esac
 
 echo -e "${YELLOW}Starting...${NC}"
 
-# We pass SSH from user to root so root can download secrets from our private Github
-sudo SSH_AUTH_SOCK=$SSH_AUTH_SOCK /run/current-system/sw/bin/nixos-rebuild switch --flake .#$FLAKE_TARGET $@
+# Determine if the system is NixOS or not
+if [ -e /etc/NIXOS ]; then
+    # NixOS specific command
+    echo "Running on NixOS"
+    sudo SSH_AUTH_SOCK=$SSH_AUTH_SOCK /run/current-system/sw/bin/nixos-rebuild switch --flake .#$FLAKE_TARGET $@
+else
+    # Assuming it's Debian with Nix and home-manager installed
+    echo "Running on non-NixOS, possibly Debian"
+    # Home-manager command (adjust as needed)
+    SSH_AUTH_SOCK=$SSH_AUTH_SOCK /home/tuna/nix-config/home-manager switch --flake .#$FLAKE_TARGET $@
+fi
 
 echo -e "${GREEN}Switch to new generation complete!${NC}"

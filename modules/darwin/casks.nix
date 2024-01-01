@@ -7,6 +7,7 @@ _:
   #"ngrok"
   #"postico"
   "vscodium"
+  "vmware-fusion"
 
   # Communication Tools
   #"discord"
@@ -32,6 +33,7 @@ _:
 #  "google-chrome"
   "firefox"
   "protonvpn"
+  "Thonny"
 
   # AI
   "diffusionbee"

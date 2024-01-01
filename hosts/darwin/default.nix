@@ -77,7 +77,7 @@ let user = "tuna"; in
       };
 
       dock = {
-        autohide = false;
+        autohide = true;
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
@@ -96,7 +96,7 @@ let user = "tuna"; in
 
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToControl = true;
+      remapCapsLockToControl = false;
     };
   };
 }

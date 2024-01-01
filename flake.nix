@@ -118,7 +118,7 @@
         ];
       });
 
-      piConfigurations {
+      piConfigurations = {
         "tuna@tunapi-0" = home-manager.lib.homeManagerConfiguration {
           system = "aarch64-linux";
           specialArgs = inputs;

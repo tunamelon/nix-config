@@ -75,6 +75,7 @@
         "create-keys" = mkApp "create-keys" system;
         "check-keys" = mkApp "check-keys" system;
       };
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       devShells = forAllSystems devShell;
@@ -119,6 +120,17 @@
           }
           ./hosts/nixos
         ];
-      }); 
+      });
+
+      homeConfigurations."tuna" = home-manager.lib.homeManagerConfiguration {
+        inherit nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {inherit inputs;};
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [
+          ./hosts/tunapi-0/home.nix
+        ];
+      };
+
   };
 }

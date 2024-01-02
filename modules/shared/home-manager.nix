@@ -56,6 +56,9 @@ let name = "Tuna";
 
       # Always color ls and group directories
       alias ls='ls --color=auto'
+      
+      # Garbage collect nix
+      alias nix-gc='nix-garbage-collect -d'
     '';
   };
 

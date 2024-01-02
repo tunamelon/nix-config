@@ -1,4 +1,4 @@
 { config, pkgs, lib, ... }:
 {
-  testing = "echo yes matie!";
+  nix-switch = "nix run github:tunamelon/nix-config#build-switch && exec zsh";
 }

@@ -8,11 +8,13 @@ let
     emacsclient -c -n &
   '';
   sharedFiles = import ../shared/files.nix { inherit config pkgs; };
+  sharedConfig = import ../shared/home-manager.nix { inherit config pkgs lib; };
+  customAliases = import ./aliases.nix { inherit config pkgs lib; };
   additionalFiles = import ./files.nix { inherit user config pkgs; };
 in
 {
   imports = [
-   ./dock
+    ./dock
   ];
 
   # It me
@@ -55,13 +57,33 @@ in
 
         stateVersion = "23.11";
       };
-      programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
-
+      #programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
+      programs = lib.mkMerge [
+          sharedConfig
+          { 
+            zsh = {
+              shellAliases = customAliases;
+            };
+          }
+        ];
+      
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344
       manual.manpages.enable = false;
     };
   };
+
+
+  
+
+  #programs = lib.mkMerge [
+  #        sharedConfig
+  #        { 
+  #          # other stuff?
+  #        }
+  #      ];
+
+  # programs.zsh.enable = true;
 
   # Fully declarative dock using the latest from Nix Store
   local = { 
@@ -75,6 +97,7 @@ in
         # User apps
         { path = "/Applications/Firefox.app/"; }
         { path = "/Applications/Thonny.app/"; }
+        { path = "/Applications/VMware Fusion.app/"; }
         { path = "/Applications/VSCodium.app/"; }
 
         #{
@@ -95,3 +118,4 @@ in
     };
   };
 }
+

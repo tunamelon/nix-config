@@ -7,6 +7,7 @@ let name = "Tuna";
   # Shared shell configuration
   zsh = {
     enable = true;
+#    shellAliases = {nothing="echo nothingness";};
     autocd = false;
     cdpath = [ "~/.local/share/src" ];
     plugins = [

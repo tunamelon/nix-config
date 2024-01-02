@@ -41,12 +41,13 @@ let name = "Tuna";
 
       # Emacs is my editor
       export ALTERNATE_EDITOR=""
-      export EDITOR="emacsclient -t"
-      export VISUAL="emacsclient -c -a emacs"
+      export EDITOR="nvim"
+      export VISUAL="codium --wait"
 
-      e() {
-          emacsclient -t "$@"
-      }
+
+      #e() {
+      #    emacsclient -t "$@"
+      #}
 
       # nix shortcuts
       shell() {
@@ -69,7 +70,7 @@ let name = "Tuna";
     extraConfig = {
       init.defaultBranch = "main";
       core = { 
-	    editor = "vim";
+	    editor = "nvim";
         autocrlf = "input";
       };
       commit.gpgsign = false;
@@ -251,6 +252,10 @@ let name = "Tuna";
         };
       };
     };
+  };
+
+  neovim = {
+    enable = true;
   };
 
   ssh = {

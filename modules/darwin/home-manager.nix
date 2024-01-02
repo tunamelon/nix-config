@@ -3,10 +3,10 @@
 let
   user = "tuna";
   # Define the content of your file as a derivation
-  myEmacsLauncher = pkgs.writeScript "emacs-launcher.command" ''
-    #!/bin/sh
-    emacsclient -c -n &
-  '';
+  #myEmacsLauncher = pkgs.writeScript "emacs-launcher.command" ''
+  #  #!/bin/sh
+  #  emacsclient -c -n &
+  #'';
   sharedFiles = import ../shared/files.nix { inherit config pkgs; };
   sharedConfig = import ../shared/home-manager.nix { inherit config pkgs lib; };
   customAliases = import ./aliases.nix { inherit config pkgs lib; };
@@ -52,17 +52,19 @@ in
         file = lib.mkMerge [
           sharedFiles
           additionalFiles
-          { "emacs-launcher.command".source = myEmacsLauncher; }
+          #{ "emacs-launcher.command".source = myEmacsLauncher; }
         ];
 
         stateVersion = "23.11";
       };
-      #programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
+
+      # Merges shared home-manager with host specific programs:
       programs = lib.mkMerge [
-          sharedConfig
+          sharedConfig # merges shared home-manager.nix
           { 
+            # Host specific programs:
             zsh = {
-              shellAliases = customAliases;
+              shellAliases = customAliases; # imports from aliases.nix
             };
           }
         ];
@@ -73,17 +75,6 @@ in
     };
   };
 
-
-  
-
-  #programs = lib.mkMerge [
-  #        sharedConfig
-  #        { 
-  #          # other stuff?
-  #        }
-  #      ];
-
-  # programs.zsh.enable = true;
 
   # Fully declarative dock using the latest from Nix Store
   local = { 

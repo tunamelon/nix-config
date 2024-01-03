@@ -58,7 +58,7 @@ let name = "Tuna";
       alias ls='ls --color=auto'
       
       # Garbage collect nix
-      alias nix-gc='nix-garbage-collect -d'
+      alias nix-gc='nix-collect-garbage -d'
     '';
   };
 

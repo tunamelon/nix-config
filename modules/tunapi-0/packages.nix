@@ -53,6 +53,7 @@ shared-packages ++ [
 #  xclip # For the org-download package in Emacs
 #  xorg.xwininfo # Provides a cursor to click and learn about windows
 #  xorg.xrandr
+  neovim
 
   # File and system utilities
 #  inotify-tools # inotifywait, inotifywatch - For file system events
@@ -60,7 +61,7 @@ shared-packages ++ [
 #  libnotify
 #  playerctl # Control media players from command line
 #  pinentry-curses
-  pcmanfm # Our file browser
+#  pcmanfm # Our file browser
 #  sqlite
 #  xdg-utils
 

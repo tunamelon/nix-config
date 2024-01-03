@@ -70,10 +70,10 @@ in
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
-      # Emacs is my editor
+      #  Editors
 #      export ALTERNATE_EDITOR=""
-#      export EDITOR="emacsclient -t"
-#      export VISUAL="emacsclient -c -a emacs"
+      export EDITOR="nvim"
+      export VISUAL="codium --wait"
 
 #      e() {
 #          emacsclient -t "$@"
@@ -83,7 +83,7 @@ in
       shell() {
           nix-shell '<nixpkgs>' -A "$1"
       }
-      
+
     '';
   };
 

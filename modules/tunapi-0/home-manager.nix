@@ -72,7 +72,7 @@ in
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
-      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+      'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
       #  Editors
 #      export ALTERNATE_EDITOR=""
       export EDITOR="nvim"

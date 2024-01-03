@@ -57,6 +57,8 @@ in
     ];
     shellAliases = customAliases; # imports from aliases.nix
     initExtraFirst = ''
+      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
         . /nix/var/nix/profiles/default/etc/profile.d/nix.sh

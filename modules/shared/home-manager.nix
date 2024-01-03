@@ -18,7 +18,7 @@ let name = "Tuna";
       }
       {
           name = "powerlevel10k-config";
-          src = lib.cleanSource ./config;
+          src = lib.cleanSource ../shared/config/p10k/;
           file = "p10k.zsh";
       }
     ];

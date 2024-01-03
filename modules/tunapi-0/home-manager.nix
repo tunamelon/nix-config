@@ -6,6 +6,7 @@ let
   name = "Tuna";
   xdg_configHome  = "/home/${user}/.config";
   shared-programs = import ../shared/home-manager.nix { inherit config pkgs lib; };
+  customAliases = import ./aliases.nix { inherit config pkgs lib; };
   shared-files = import ../shared/files.nix { inherit config pkgs; };
 
 #  polybar-user_modules = builtins.readFile (pkgs.substituteAll {
@@ -54,6 +55,7 @@ in
           file = "p10k.zsh";
       }
     ];
+    shellAliases = customAliases; # imports from aliases.nix
     initExtraFirst = ''
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -61,15 +63,12 @@ in
       fi
 
       # Define variables for directories
-      export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
-      export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
+      #export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
+      #export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
-
-      # Ripgrep alias
- #     alias search=rg -p --glob '!node_modules/*'  $@
 
       # Emacs is my editor
 #      export ALTERNATE_EDITOR=""
@@ -84,9 +83,7 @@ in
       shell() {
           nix-shell '<nixpkgs>' -A "$1"
       }
-
-      # Always color ls and group directories
-      alias ls='ls --color=auto'
+      
     '';
   };
 

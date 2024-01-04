@@ -6,17 +6,17 @@ let
   home = "Users";
 
   # Public keys
-  macos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHa7ofDgHgTBw3/gzxWE56EJdhjWuhDTgqyIovdEV3m tuna@Tunas-MacBook-Air.local";
-  macos2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII0qGdfsS0prYj2z0Vupf6LM4XQ7TfRzGoKsMQqtokKV tuna@macnix.local";
+#  macos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHa7ofDgHgTBw3/gzxWE56EJdhjWuhDTgqyIovdEV3m tuna@Tunas-MacBook-Air.local";
+#  macos2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII0qGdfsS0prYj2z0Vupf6LM4XQ7TfRzGoKsMQqtokKV tuna@macnix.local";
   # users = [ ];
-  systems = [ macos macos2 ];
+#  systems = [ macos macos2 ];
 
 in
 
 {
-  age.identityPaths = [ 
-    "/Users/${user}/.ssh/id_ed25519"
-  ];
+#  age.identityPaths = [ 
+#    "/Users/${user}/.ssh/id_ed25519"
+#  ];
 
   # Your secrets go here
   #
@@ -29,24 +29,24 @@ in
   #       so Github reads it correctly.
 
   #
-  age.secrets."github-ssh-key" = {
-    symlink = true;
-    path = "/Users/${user}/.ssh/id_github";
-    file =  "${secrets}/github-ssh-key.age";
-    mode = "600";
-    owner = "${user}";
-    group = "${user}";
-  };
+#  age.secrets."github-ssh-key" = {
+#    symlink = true;
+#    path = "/Users/${user}/.ssh/id_github";
+#    file =  "${secrets}/github-ssh-key.age";
+#    mode = "600";
+#    owner = "${user}";
+#    group = "${user}";
+#  };
 
-  age.secrets."secret" = {
+#  age.secrets."secret" = {
 #    publicKeys = systems;
-    symlink = true;
-    path = "/Users/${user}/secret.txt";
-    file =  "${secrets}/secret.age";
-    mode = "600";
-    owner = "${user}";
-    group = "${user}";
-  };
+#    symlink = true;
+#    path = "/Users/${user}/secret.txt";
+#    file =  "${secrets}/secret.age";
+#    mode = "600";
+#    owner = "${user}";
+#    group = "${user}";
+#  };
 
   # age.secrets."github-signing-key" = {
   #   symlink = false;

@@ -6,10 +6,10 @@ let
   home = "Users";
 
   # Public keys
-#  macos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHa7ofDgHgTBw3/gzxWE56EJdhjWuhDTgqyIovdEV3m tuna@Tunas-MacBook-Air.local";
-#  macos2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII0qGdfsS0prYj2z0Vupf6LM4XQ7TfRzGoKsMQqtokKV tuna@macnix.local";
+  macos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHa7ofDgHgTBw3/gzxWE56EJdhjWuhDTgqyIovdEV3m tuna@Tunas-MacBook-Air.local";
+  macos2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII0qGdfsS0prYj2z0Vupf6LM4XQ7TfRzGoKsMQqtokKV tuna@macnix.local";
   # users = [ ];
-#  systems = [ macos macos2 ];
+  systems = [ macos macos2 ];
 
 in
 
@@ -38,15 +38,15 @@ in
 #    group = "${user}";
 #  };
 
-#  age.secrets."secret" = {
-#    publicKeys = systems;
-#    symlink = true;
-#    path = "/Users/${user}/secret.txt";
-#    file =  "${secrets}/secret.age";
-#    mode = "600";
-#    owner = "${user}";
-#    group = "${user}";
-#  };
+  age.secrets."secret" = {
+    publicKeys = systems;
+    symlink = true;
+    path = "/Users/${user}/secret.txt";
+    file =  "${secrets}/secret.age";
+    mode = "600";
+    owner = "${user}";
+    group = "${user}";
+  };
 
   # age.secrets."github-signing-key" = {
   #   symlink = false;

@@ -15,12 +15,17 @@ GITHUB="github:tunamelon/nix-config"
 export NIXPKGS_ALLOW_UNFREE=1
 
 echo "${YELLOW}Starting build...${NC}"
-nix --experimental-features 'nix-command flakes' build $GITHUB#$SYSTEM $@
+nix --experimental-features 'nix-command flakes' build .#$SYSTEM $@
 
 echo "${YELLOW}Switching to new generation...${NC}"
-./result/sw/bin/darwin-rebuild switch --flake $GITHUB#$FLAKE $@
+./result/sw/bin/darwin-rebuild switch --flake .#$FLAKE $@
 
 echo "${YELLOW}Cleaning up...${NC}"
 unlink ./result
 
 echo "${GREEN}Switch to new generation complete!${NC}"
+
+
+#nix --experimental-features 'nix-command flakes' build github:tunamelon/nix-config#darwinConfigurations.macos.system
+
+#./result/sw/bin/darwin-rebuild switch --flake github:tunamelon/nix-config#darwinConfigurations.macos.system

@@ -20,7 +20,7 @@ _:
 
   # Browsers
   "firefox"
-  "protonvpn"
+  "homebrew/cask/protonvpn"
   "Thonny"
 
   # AI

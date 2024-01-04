@@ -14,9 +14,9 @@ let
 in
 
 {
-#  age.identityPaths = [ 
-#    "/Users/${user}/.ssh/id_ed25519"
-#  ];
+  age.identityPaths = [ 
+    "/Users/${user}/.ssh/id_ed25519"
+  ];
 
   # Your secrets go here
   #
@@ -39,7 +39,7 @@ in
 #  };
 
   age.secrets."secret" = {
-    publicKeys = systems;
+    #publicKeys = systems;
     symlink = true;
     path = "/Users/${user}/secret.txt";
     file =  "${secrets}/secret.age";

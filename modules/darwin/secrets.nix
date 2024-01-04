@@ -29,17 +29,17 @@ in
   #       so Github reads it correctly.
 
   #
-#  age.secrets."github-ssh-key" = {
-#    symlink = true;
-#    path = "/Users/${user}/.ssh/id_github";
-#    file =  "${secrets}/github-ssh-key.age";
-#    mode = "600";
-#    owner = "${user}";
-#    group = "${user}";
-#  };
+  age.secrets."github-ssh-key" = {
+    symlink = true;
+    path = "/Users/${user}/.ssh/id_github_TEST";
+    file =  "${secrets}/github-ssh-key.age";
+    mode = "600";
+    owner = "${user}";
+    group = "${user}";
+  };
 
   age.secrets."secret" = {
-    publicKeys = systems;
+    #publicKeys = systems;
     symlink = true;
     path = "/Users/${user}/secret.txt";
     file =  "${secrets}/secret.age";
@@ -48,13 +48,13 @@ in
     group = "${user}";
   };
 
-  # age.secrets."github-signing-key" = {
+  #age.secrets."github-signing-key" = {
   #   symlink = false;
   #   path = "/Users/${user}/.ssh/pgp_github.key";
   #   file =  "${secrets}/github-signing-key.age";
   #   mode = "600";
   #   owner = "${user}";
-  # };
+  #};
 
 
 

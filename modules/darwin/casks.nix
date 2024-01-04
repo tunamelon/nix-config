@@ -3,38 +3,42 @@ _:
 [
   # Development Tools
   "homebrew/cask/docker"
-  #"insomnia"
-  #"ngrok"
-  #"postico"
   "vscodium"
   "vmware-fusion"
 
   # Communication Tools
-  #"discord"
-  #"loom"
-  #"notion"
-  #"slack"
   "telegram"
-  #"zoom"
 
   # Utility Tools
   "appcleaner"
-#  "syncthing"
+  "authy"
 
   # Entertainment Tools
-#  "steam"
   "vlc"
 
   # Productivity Tools
-#  "raycast"
-#  "asana"
 
   # Browsers
-#  "google-chrome"
   "firefox"
   "protonvpn"
   "Thonny"
 
   # AI
   "diffusionbee"
+
+  # Unused
+#  "google-chrome"
+#  "steam"
+#  "syncthing"
+#  "asana"
+#  "raycast"
+#  "zoom"
+  #"discord"
+  #"loom"
+  #"notion"
+  #"slack" 
+  #"insomnia"
+  #"ngrok"
+  #"postico"
+
 ]

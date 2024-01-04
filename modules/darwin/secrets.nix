@@ -5,12 +5,6 @@ let
   user = "tuna"; 
   home = "Users";
 
-  # Public keys
-  macos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHa7ofDgHgTBw3/gzxWE56EJdhjWuhDTgqyIovdEV3m tuna@Tunas-MacBook-Air.local";
-  macos2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII0qGdfsS0prYj2z0Vupf6LM4XQ7TfRzGoKsMQqtokKV tuna@macnix.local";
-  # users = [ ];
-  systems = [ macos macos2 ];
-
 in
 
 {

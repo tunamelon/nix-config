@@ -17,10 +17,10 @@ echo "${YELLOW}Starting build...:D${NC}"
 echo "Flake: ${FLAKE}"
 echo "System: ${SYSTEM}"
 echo "GitHub Flake URI: ${GITHUB}#${SYSTEM}"
-nix --experimental-features 'nix-command flakes' build GITHUB#$SYSTEM $@
+nix --experimental-features 'nix-command flakes' build $GITHUB#$SYSTEM $@
 
 echo "${YELLOW}Switching to new generation...${NC}"
-./result/sw/bin/darwin-rebuild switch --flake GITHUB#$FLAKE $@
+./result/sw/bin/darwin-rebuild switch --flake $GITHUB#$FLAKE $@
 
 echo "${YELLOW}Cleaning up...${NC}"
 unlink ./result

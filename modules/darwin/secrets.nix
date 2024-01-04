@@ -39,7 +39,7 @@ in
 #  };
 
   age.secrets."secret" = {
-    #publicKeys = systems;
+    publicKeys = systems;
     symlink = true;
     path = "/Users/${user}/secret.txt";
     file =  "${secrets}/secret.age";

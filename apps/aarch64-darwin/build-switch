@@ -9,14 +9,12 @@ NC='\033[0m'
 
 FLAKE="macos"
 SYSTEM="darwinConfigurations.$FLAKE.system"
+# Github repo to build from
 GITHUB="github:tunamelon/nix-config"
 
 export NIXPKGS_ALLOW_UNFREE=1
 
-echo "${YELLOW}Starting build...:D${NC}"
-echo "Flake: ${FLAKE}"
-echo "System: ${SYSTEM}"
-echo "GitHub Flake URI: ${GITHUB}#${SYSTEM}"
+echo "${YELLOW}Starting build...${NC}"
 nix --experimental-features 'nix-command flakes' build $GITHUB#$SYSTEM $@
 
 echo "${YELLOW}Switching to new generation...${NC}"

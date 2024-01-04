@@ -8,11 +8,13 @@ NC='\033[0m'
 
 FLAKE="macos"
 SYSTEM="darwinConfigurations.$FLAKE.system"
+# Github repo to build from
+GITHUB="github:tunamelon/nix-config"
 
 export NIXPKGS_ALLOW_UNFREE=1
 
 echo "${GREEN}Starting build...${NC}"
-nix --experimental-features 'nix-command flakes' build .#$SYSTEM $@
+nix --experimental-features 'nix-command flakes' build $GITHUB#$SYSTEM $@
 
 echo "${GREEN}Cleaning up...${NC}"
 unlink ./result

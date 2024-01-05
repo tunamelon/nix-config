@@ -12,6 +12,7 @@ _:
   # Utility Tools
   "appcleaner"
   "authy"
+  "raspberry-pi-imager"
 
   # Entertainment Tools
   "vlc"

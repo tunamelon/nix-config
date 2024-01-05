@@ -11,6 +11,7 @@ let user = "tuna";
 #    agenix.nixosModules.default
     
   ];
-home.stateVersion = "21.11";
-nixpkgs.config.allowUnfree = true;
+  home.stateVersion = "21.11";
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

@@ -24,6 +24,11 @@ in
     isHidden = false;
     shell = pkgs.zsh;
   };
+  
+  nix = {
+    #package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
 
   homebrew = {
     enable = true;

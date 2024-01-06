@@ -72,8 +72,8 @@ shared-packages ++ [
 
   # PDF viewer
 #  zathura
-#  sl
-#  lolcat
+  sl
+  lolcat
   # Music and entertainment
 #  spotify
 ]

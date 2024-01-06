@@ -42,6 +42,7 @@ in
     # $ mas search <app name>
     #
     masApps = {
+      "AmorphousDiskMark" = 1168254295;
       "Bitwarden" = 1352778147;
       "Moom" = 419330170;
     };

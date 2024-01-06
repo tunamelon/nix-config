@@ -20,5 +20,17 @@
     # Re-connect, we need to change /Users/tuna to /home/tuna in ~/.ssh/config
     - sed -i 's/\/Users\/tuna/\/home\/tuna/g' ~/.ssh/config
     
-    # Build home-manager
-    - pushd . > /dev/null && echo 'Cloning git repo...' && cd /tmp/ && git clone git@github.com:tunamelon/nix-config.git && cd nix-config && nix run .#build-switch; popd
+    # Add home-manager to shell
+    - nix-shell -p home-manager    
+
+    # Build home-manager from upstream
+    - home-manager switch --flake github:tunamelon/nix-config#tunapi-0 && exec zsh
+    
+    # If above command doesn't work, try to nix collect garbage, then try again
+    - nix-collect-garbage -d
+
+    # Set up zsh as default shell (until we configure this declaritively somehow maybe agenix?)
+    - sed -i '/# if running bash/i # Set zsh as default shell\nexec zsh\n' ~/.profile
+
+    # All done, should be able to rebuild now with nix-switch from upstream
+    - nix-switch

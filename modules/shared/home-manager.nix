@@ -48,7 +48,7 @@ let name = "Tuna";
       # ssh-r wraps the ssh command in a loop for reconnecting
       ssh-r() {
         while ! ssh "$@"; do
-          echo "Connection failed, retrying in 5 seconds..."
+          echo "Connection failed, retrying in 3 seconds..."
           sleep 3
         done
       }

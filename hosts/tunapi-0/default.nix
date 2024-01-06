@@ -13,5 +13,4 @@ let user = "tuna";
   ];
   home.stateVersion = "21.11";
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

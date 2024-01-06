@@ -1,0 +1,24 @@
+1. Installation
+
+  1.1 Darwin
+  
+  1.2 NixOS
+
+  1.3 Raspberry Pi
+    
+    # Install default PiOS Image, set with ssh access and wifi, ssh into system (lowercase -p for port)
+    - ssh -p 23 tuna@meghostie.ddns.net
+    # Update system:
+    - sudo apt update && sudo apt full-upgrade -y && sudo reboot now
+
+    # Re-connect, install nix with installer https://zero-to-nix.com/concepts/nix-installer
+    - curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+
+    # Exit ssh, then scp github ssh key (Uppercase -P for Port):
+    - scp -P 23 ~/.ssh/id_github tuna@meghostie.ddns.net:~/.ssh/id_github && scp -P 23 ~/.ssh/config tuna@meghostie.ddns.net:~/.ssh/config
+    
+    # Re-connect, we need to change /Users/tuna to /home/tuna in ~/.ssh/config
+    - sed -i 's/\/Users\/tuna/\/home\/tuna/g' ~/.ssh/config
+    
+    # Build home-manager
+    - pushd . > /dev/null && echo 'Cloning git repo...' && cd /tmp/ && git clone git@github.com:tunamelon/nix-config.git && cd nix-config && nix run .#build-switch; popd

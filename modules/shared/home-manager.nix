@@ -29,8 +29,8 @@ let name = "Tuna";
       fi
 
       # Define variables for directories
-      export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
-      export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
+      #export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
+      #export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
 
       # Remove history data we don't want to see
@@ -39,10 +39,20 @@ let name = "Tuna";
       # Ripgrep alias
       alias search=rg -p --glob '!node_modules/*'  $@
 
-      # Emacs is my editor
+      # Nvim and codium is my editor
       export ALTERNATE_EDITOR=""
       export EDITOR="nvim"
       export VISUAL="codium --wait"
+
+      # Custom shortcuts
+      # ssh-r wraps the ssh command in a loop for reconnecting
+      ssh-r() {
+        while ! ssh "$@"; do
+          echo "Connection failed, retrying in 5 seconds..."
+          sleep 3
+        done
+      }
+
 
 
       #e() {

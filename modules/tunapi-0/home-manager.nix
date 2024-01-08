@@ -4,7 +4,7 @@ let
   email = "tuna@sodamelon.com";
   user = "tuna";
   name = "Tuna";
-  xdg_configHome  = "/home/${user}/.config";
+  #xdg_configHome  = "/home/${user}/.config";
   #shared-programs = import ../shared/home-manager.nix { inherit config pkgs lib; };
   customAliases = import ./aliases.nix { inherit config pkgs lib; };
   shared-files = import ../shared/files.nix { inherit config pkgs; };
@@ -72,7 +72,7 @@ in
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
-      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+      #POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
       #  Editors
 #      export ALTERNATE_EDITOR=""
       export EDITOR="nvim"

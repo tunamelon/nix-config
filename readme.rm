@@ -35,16 +35,16 @@
     - sed -i 's/\/Users\/tuna/\/home\/tuna/g' ~/.ssh/config
     
     # Add home-manager to shell
-    - nix-shell -p home-manager    
+    - nix-shell -p home-manager   
+
+    # Collect garbage
+    - nix-collect-garbage -d 
 
     # Build home-manager from upstream
     - home-manager switch --flake github:tunamelon/nix-config#tunapi-0 && exec zsh
-    
-    # If above command doesn't work, try to nix collect garbage, then try again
-    - nix-collect-garbage -d
 
     # Set up zsh as default shell (until we configure this declaritively somehow maybe agenix?)
-    - sed -i '/# if running bash/i # Set zsh as default shell\nexec zsh\n' ~/.profile
+    - echo "$(which zsh)" | sudo tee -a /etc/shells && chsh -s $(which zsh)
 
     # All done, should be able to rebuild now with nix-switch from upstream
     - nix-switch

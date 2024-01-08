@@ -111,17 +111,17 @@ in
   };
 
   # Use a dark theme
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.adwaita-icon-theme;
-    };
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.adwaita-icon-theme;
-    };
-  };
+  #gtk = {
+  #  enable = true;
+  #  iconTheme = {
+  #    name = "Adwaita-dark";
+  #    package = pkgs.gnome.adwaita-icon-theme;
+  #  };
+  #  theme = {
+  #    name = "Adwaita-dark";
+  #    package = pkgs.gnome.adwaita-icon-theme;
+  3  };
+  #};
 
   # Screen lock
 #  services = {

@@ -12,6 +12,7 @@ _:
   # Utility Tools
   "appcleaner"
   "authy"
+  "balenaetcher"
   "raspberry-pi-imager"
 
   # Entertainment Tools

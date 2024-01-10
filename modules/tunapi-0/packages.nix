@@ -53,7 +53,7 @@ shared-packages ++ [
 #  xclip # For the org-download package in Emacs
 #  xorg.xwininfo # Provides a cursor to click and learn about windows
 #  xorg.xrandr
-  neovim
+#  neovim
 
   # File and system utilities
 #  inotify-tools # inotifywait, inotifywatch - For file system events
@@ -73,7 +73,7 @@ shared-packages ++ [
   # PDF viewer
 #  zathura
 #  sl
-  lolcat
+#  lolcat
   # Music and entertainment
 #  spotify
 ]

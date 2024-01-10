@@ -4,6 +4,9 @@ with pkgs;
 let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
 
+  # Tests
+  sl
+
   # Security and authentication
 #  yubikey-manager-qt
 #  yubikey-agent
@@ -72,8 +75,6 @@ shared-packages ++ [
 
   # PDF viewer
 #  zathura
-#  sl
-  lolcat
   # Music and entertainment
 #  spotify
 ]

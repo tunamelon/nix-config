@@ -6,7 +6,7 @@ shared-packages ++ [
 
   # Tests
   sl
-
+  lolcat
   # Security and authentication
 #  yubikey-manager-qt
 #  yubikey-agent
@@ -75,8 +75,6 @@ shared-packages ++ [
 
   # PDF viewer
 #  zathura
-  sl
-#  lolcat
   # Music and entertainment
 #  spotify
 ]

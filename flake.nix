@@ -144,6 +144,26 @@
         ];
       };
 
+      homeConfigurations."tunapi-5" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit inputs;};
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [
+          ./hosts/tunapi-5
+        ];
+      };
+
+      homeConfigurations."tunapi-5" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit inputs;};
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [
+          ./hosts/tunapi-4i
+        ];
+      };
+
 ### This worked ### Just remember to copy home.nix back from /home-manager
 #      homeConfigurations."tuna" = home-manager.lib.homeManagerConfiguration {
 #        inherit nixpkgs.legacyPackages.${system};

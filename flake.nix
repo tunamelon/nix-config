@@ -144,13 +144,13 @@
         ];
       };
 
-      homeConfigurations."tunapi-5" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."tunapi-4i" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./hosts/tunapi-5
+          ./hosts/tunapi-4i
         ];
       };
 
@@ -160,7 +160,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./hosts/tunapi-4i
+          ./hosts/tunapi-5
         ];
       };
 

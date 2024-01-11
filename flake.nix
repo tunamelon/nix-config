@@ -88,7 +88,6 @@
 
       darwinConfigurations = let user = "tuna"; in {
         macos = darwin.lib.darwinSystem {
-          inherit pkgs;
           system = "aarch64-darwin";
           specialArgs = inputs;
           modules = [

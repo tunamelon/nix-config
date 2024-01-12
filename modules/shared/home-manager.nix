@@ -44,6 +44,9 @@ let name = "Tuna";
       export EDITOR="nvim"
       export VISUAL="codium --wait"
 
+      # Hook direnv into Zsh
+      eval "$(direnv hook zsh)"
+
       # Custom shortcuts
       # ssh-r wraps the ssh command in a loop for reconnecting
       ssh-r() {

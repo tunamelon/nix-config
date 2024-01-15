@@ -5,9 +5,8 @@ let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
 shared-packages ++ [
   
   direnv
-  docker
+  #docker
   home-manager
   neovim
-  nftables
 
 ]

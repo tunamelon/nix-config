@@ -20,9 +20,9 @@ in
   };
 
   # Enable Docker service
-  services.docker = {
-    enable = true;
-  };
+  #services.docker = {
+  #  enable = true;
+  #};
 
   programs.zsh = {
     enable = true;

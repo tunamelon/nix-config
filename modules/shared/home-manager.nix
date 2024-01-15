@@ -232,12 +232,12 @@ let name = "Tuna";
       };
 
       dynamic_padding = true;
-      decorations = "full";
-      title = "Terminal";
-      class = {
-        instance = "Alacritty";
-        general = "Alacritty";
-      };
+      # decorations = "full";
+      #title = "Terminal";
+      #class = {
+      #  instance = "Alacritty";
+      #  general = "Alacritty";
+      #};
 
       colors = {
         primary = {

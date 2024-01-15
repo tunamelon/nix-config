@@ -19,7 +19,10 @@ in
     stateVersion = "21.11";
   };
 
-  virtualisation.docker.enable = true;
+  # Enable Docker service
+  services.docker = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;

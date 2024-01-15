@@ -19,6 +19,8 @@ in
     stateVersion = "21.11";
   };
 
+  virtualisation.docker.enable = true;
+
   programs.zsh = {
     enable = true;
     autocd = false;

@@ -231,7 +231,7 @@ let name = "Tuna";
         ];
       };
 
-      dynamic_padding = true;
+      #dynamic_padding = true;
       # decorations = "full";
       #title = "Terminal";
       #class = {

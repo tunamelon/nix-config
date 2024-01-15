@@ -96,6 +96,7 @@ in
         { path = "/Applications/Thonny.app/"; }
         { path = "/Applications/VMware Fusion.app/"; }
         { path = "/Applications/VSCodium.app/"; }
+        { path = "/Applications/Authy Desktop.app/"; }
 
         #{
         #  path = toString myEmacsLauncher;
@@ -107,10 +108,10 @@ in
         #  options = "--sort name --view grid --display folder";
         #}
         #{
-        #  path = "${config.users.users.${user}.home}/downloads";
-        #  section = "others";
-        #  options = "--sort name --view grid --display Folder";
-        #}
+          path = "${config.users.users.${user}.home}/downloads";
+          section = "others";
+          options = "--sort name --view grid --display Folder";
+        }
       ];
     };
   };

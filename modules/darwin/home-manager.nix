@@ -107,8 +107,8 @@ in
         #  section = "others";
         #  options = "--sort name --view grid --display folder";
         #}
-        #{
-          path = "~/Downloads";
+        {
+          path = "${config.users.users.${user}.home}/downloads";
           section = "others";
           options = "--sort name --view grid --display Folder";
         }

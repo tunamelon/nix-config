@@ -8,5 +8,6 @@ shared-packages ++ [
   docker
   home-manager
   neovim
+  nftables
 
 ]

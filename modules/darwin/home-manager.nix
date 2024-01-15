@@ -110,7 +110,7 @@ in
         {
           path = "/Users/${user}/Downloads/";
           section = "others";
-          options = "--sort name --view grid --display Folder";
+          options = "--sort name --view grid --display folder";
         }
       ];
     };

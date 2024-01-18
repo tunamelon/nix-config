@@ -107,11 +107,13 @@ in
         #  section = "others";
         #  options = "--sort name --view grid --display folder";
         #}
+
         {
           path = "/Users/${user}/Downloads/";
           section = "others";
           options = "--sort name --view grid --display folder";
         }
+        
       ];
     };
   };

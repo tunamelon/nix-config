@@ -16,6 +16,7 @@ _:
   "raspberry-pi-imager"
 
   # Entertainment Tools
+  "calibre"
   "vlc"
 
   # Productivity Tools

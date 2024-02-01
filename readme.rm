@@ -18,7 +18,7 @@
     
   1.2 NixOS
 
-  1.3 Raspberry Pi
+  1.3 Raspberry Pi / GCE
     
     # Install default PiOS Image, set with ssh access and wifi, ssh into system (lowercase -p for port)
     - ssh -p 23 tuna@meghostie.ddns.net

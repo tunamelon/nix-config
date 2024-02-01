@@ -2,8 +2,8 @@
 
 let
   email = "tuna@sodamelon.com";
-  user = "tuna";
-  name = "Tuna";
+  user = "tris";
+  name = "Tris";
   #xdg_configHome  = "/home/${user}/.config";
   #shared-programs = import ../shared/home-manager.nix { inherit config pkgs lib; };
   customAliases = import ./aliases.nix { inherit config pkgs lib; };

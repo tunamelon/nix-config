@@ -176,7 +176,7 @@
 
       # Google Compute Engine
       homeConfigurations."gce" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        inherit (nixpkgs.legacyPackages.x86_64-linux) pkgs;
         extraSpecialArgs = {inherit inputs;};
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
@@ -184,6 +184,7 @@
           ./hosts/gce
         ];
       };
+
 
 ### This worked ### Just remember to copy home.nix back from /home-manager
 #      homeConfigurations."tuna" = home-manager.lib.homeManagerConfiguration {

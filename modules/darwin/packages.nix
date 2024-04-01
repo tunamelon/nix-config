@@ -8,4 +8,5 @@ shared-packages ++ [
   mas
   zsh
   nodejs
+  mermaid-cli
 ]

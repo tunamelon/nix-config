@@ -7,4 +7,5 @@ shared-packages ++ [
   google-cloud-sdk
   mas
   zsh
+  nodejs
 ]

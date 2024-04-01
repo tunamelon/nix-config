@@ -5,7 +5,6 @@ _:
   "homebrew/cask/docker"
   "vscodium"
   "vmware-fusion"
-  "node"
 
   # Communication Tools
   "telegram"

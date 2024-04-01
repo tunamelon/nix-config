@@ -18,7 +18,7 @@
     
   1.2 NixOS
 
-  1.3 Raspberry Pi / GCE
+  1.3 Raspberry Pi
     
     # Install default PiOS Image, set with ssh access and wifi, ssh into system (lowercase -p for port)
     - ssh -p 23 tuna@meghostie.ddns.net
@@ -42,6 +42,37 @@
 
     # Build home-manager from upstream
     - home-manager switch --flake github:tunamelon/nix-config#tunapi-0 && exec zsh
+
+    # Set up zsh as default shell (until we configure this declaritively somehow maybe agenix?)
+    - echo "$(which zsh)" | sudo tee -a /etc/shells && chsh -s $(which zsh)
+
+    # All done, should be able to rebuild now with nix-switch from upstream
+    - nix-switch
+
+  1.4 GCE
+
+    # Install default debian Image
+    - ssh tris@[gce-ip]
+    # Update system:
+    - sudo apt update && sudo apt full-upgrade -y && sudo reboot now
+
+    # Re-connect, install nix with installer https://zero-to-nix.com/concepts/nix-installer
+    - curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+
+    # Exit ssh, then scp github ssh key (Uppercase -P for Port):
+    - scp ~/.ssh/id_github tris@[gce-ip]:~/.ssh/id_github && scp ~/.ssh/config tris@[gce-ip]:~/.ssh/config
+    
+    # Re-connect, we need to change /Users/tuna to /home/tuna in ~/.ssh/config
+    - sed -i 's/\/Users\/tuna/\/home\/tris/g' ~/.ssh/config
+    
+    # Add home-manager to shell
+    - nix-shell -p home-manager   
+
+    # Collect garbage
+    - nix-collect-garbage -d 
+
+    # Build home-manager from upstream
+    - nix-collect-garbage -d && home-manager switch --flake github:tunamelon/nix-config#gce && exec zsh
 
     # Set up zsh as default shell (until we configure this declaritively somehow maybe agenix?)
     - echo "$(which zsh)" | sudo tee -a /etc/shells && chsh -s $(which zsh)

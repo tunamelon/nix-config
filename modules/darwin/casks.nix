@@ -5,6 +5,7 @@ _:
   "homebrew/cask/docker"
   "vscodium"
   "vmware-fusion"
+  "node"
 
   # Communication Tools
   "telegram"
@@ -21,10 +22,12 @@ _:
 
   # Productivity Tools
 
+
   # Browsers
   "firefox"
   "homebrew/cask/protonvpn"
   "Thonny"
+  "Chromium"
 
   # AI
   "diffusionbee"

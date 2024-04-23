@@ -5,6 +5,7 @@ _:
   "homebrew/cask/docker"
   "vscodium"
   "vmware-fusion"
+  "mambaforge"
 
   # Communication Tools
   "telegram"

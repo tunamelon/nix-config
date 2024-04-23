@@ -9,5 +9,4 @@ shared-packages ++ [
   zsh
   nodejs
   mermaid-cli
-  micromamba
 ]
